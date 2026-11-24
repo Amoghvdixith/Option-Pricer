@@ -1,0 +1,26 @@
+# Delta-hedging experiments (scripts/run_hedging.py). Short one European call.
+common:
+  S0: 100.0
+  K: 100.0
+  T: 1.0
+  r: 0.03
+  q: 0.0               # simplest accounting first; a q > 0 run is included separately
+  sigma_implied: 0.20
+  sigma_realised: 0.20
+  mu: 0.07             # physical total expected return
+  cost_rate: 0.0
+  frequencies: [4, 21, 252, 1000]
+  mismatch_realised_vols: [0.10, 0.14, 0.17, 0.20, 0.23, 0.26, 0.30]
+  mismatch_frequency: 252
+  cost_rates: [0.0, 0.0005, 0.001, 0.002]
+  cost_frequencies: [4, 12, 21, 52, 126, 252, 504, 1000]
+  dividend_case_q: 0.02
+  seed: 42
+fast:
+  n_paths: 10000
+  n_paths_mismatch: 5000
+  n_paths_cost: 5000
+research:
+  n_paths: 50000
+  n_paths_mismatch: 20000
+  n_paths_cost: 20000

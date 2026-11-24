@@ -1,0 +1,3 @@
+2026-11-24 12:03:28,144 INFO stage surface (mode=fast) started
+2026-11-24 12:03:34,027 INFO stage surface finished in 5.88 s
+2026-11-24 12:03:34,081 INFO stages done in 5.9 s; metadata written to results\logs\run_metadata_fast_surface.json

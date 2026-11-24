@@ -1,0 +1,8 @@
+injected,n,caught
+bound_violation,2,2
+crossed_market,2,2
+missing_quote,1,1
+negative_quote,1,1
+stale_quote,2,2
+wide_spread,2,2
+zero_bid,2,2

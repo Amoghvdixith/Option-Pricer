@@ -1,0 +1,6 @@
+check,violations_mid,violations_executable,max_magnitude
+bounds,12,0,0.16164880352960154
+monotonicity,10,0,0.20070917833420054
+vertical_spread,1,0,0.015740967042214282
+convexity,36,0,0.13250000000000028
+calendar,0,0,0.0

@@ -1,0 +1,2 @@
+option,reference,lr_coarse,lr_fine,pde_fine,uncertainty,pde_psor_iters,pde_complementarity,reference_method
+american put S=K=100 T=1 r=5% q=0 sigma=20%,6.090337578177596,6.090302470038278,6.090337578177596,6.090349632770622,3.510813931839607e-05,173622,7.219798092705787e-10,LR n=8001; uncertainty = max gap to LR n=4001 and CN 3200x3200

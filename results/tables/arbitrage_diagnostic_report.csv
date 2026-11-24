@@ -1,0 +1,16 @@
+check,violations_mid,violations_executable,max_magnitude,dataset
+bounds,0,0,0.0,true SSVI prices (no noise)
+monotonicity,0,0,0.0,true SSVI prices (no noise)
+vertical_spread,0,0,0.0,true SSVI prices (no noise)
+convexity,0,0,0.0,true SSVI prices (no noise)
+calendar,0,0,0.0,true SSVI prices (no noise)
+bounds,12,0,0.16164880352960154,noisy synthetic quotes (cleaned)
+monotonicity,10,0,0.20070917833420054,noisy synthetic quotes (cleaned)
+vertical_spread,1,0,0.015740967042214282,noisy synthetic quotes (cleaned)
+convexity,36,0,0.13250000000000028,noisy synthetic quotes (cleaned)
+calendar,0,0,0.0,noisy synthetic quotes (cleaned)
+bounds,0,0,0.0,true prices + injected violations
+monotonicity,1,1,0.2,true prices + injected violations
+vertical_spread,1,1,0.003161409054466602,true prices + injected violations
+convexity,2,2,0.3756649311497493,true prices + injected violations
+calendar,38,0,0.01437137063226912,true prices + injected violations

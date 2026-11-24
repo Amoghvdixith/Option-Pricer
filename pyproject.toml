@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "optpricer"
+version = "0.1.0"
+description = "Educational options pricing and research library: BSM, Greeks, CRR/LR trees, finite differences with PSOR, Monte Carlo, implied volatility, surface diagnostics and delta-hedging simulation."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.1",
+    "matplotlib>=3.8",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.4", "mypy>=1.8"]
+app = ["streamlit>=1.46", "plotly>=5.18"]
+market = ["yfinance>=0.2.40"]
+notebooks = ["nbformat>=5.9", "nbclient>=0.9", "ipykernel>=6.25"]
+
+[project.scripts]
+optpricer = "optpricer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: larger numerical convergence experiments (deselect with -m 'not slow')",
+    "app: Streamlit smoke tests (need the [app] extra)",
+]
+addopts = "-ra -p no:cacheprovider"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "NPY"]
+ignore = ["E741", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+# notebook cell sources are embedded as long string literals
+"scripts/build_notebooks.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+warn_unused_ignores = false
+files = ["src/optpricer"]
+
+[tool.coverage.run]
+source = ["optpricer"]
+omit = ["*/experiments/*"]  # experiment drivers are executed by scripts/run_all.py, not unit-tested

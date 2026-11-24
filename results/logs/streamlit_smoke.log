@@ -1,0 +1,22 @@
+2026-11-24 11:56:06.622 Uvicorn server started on :::8765
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8765
+
+2026-11-24 11:56:14.037 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-11-24 11:56:21.315 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-11-24 11:56:21.318 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+health check: GET /_stcore/health -> ok (server started headless on localhost:8765, then stopped)

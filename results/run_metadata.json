@@ -1,0 +1,296 @@
+{
+  "created_utc": "2026-11-24T12:02:19.165577+00:00",
+  "optpricer_version": "0.1.0",
+  "python": "3.14.4",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "numpy": "2.5.5",
+  "scipy": "1.18.1",
+  "pandas": "3.1.1",
+  "matplotlib": "3.11.2",
+  "seed": null,
+  "runtime_seconds": 65.62,
+  "config": {
+    "pricing": {
+      "spot": 100.0,
+      "strikes": [
+        80,
+        90,
+        100,
+        110,
+        120
+      ],
+      "maturities": [
+        0.0833333333,
+        0.25,
+        1.0,
+        2.0
+      ],
+      "scenarios": [
+        {
+          "name": "base",
+          "r": 0.05,
+          "q": 0.0,
+          "sigma": 0.2
+        },
+        {
+          "name": "dividend",
+          "r": 0.05,
+          "q": 0.03,
+          "sigma": 0.2
+        },
+        {
+          "name": "high_vol",
+          "r": 0.03,
+          "q": 0.01,
+          "sigma": 0.4
+        }
+      ],
+      "seed": 20261124,
+      "headline": {
+        "S": 100,
+        "K": 100,
+        "T": 1.0,
+        "r": 0.05,
+        "q": 0.0,
+        "sigma": 0.2
+      },
+      "crr_n": 1000,
+      "lr_n": 201,
+      "pde_n_space": 400,
+      "pde_n_time": 400,
+      "mc_paths": 200000,
+      "american_reference": {
+        "lr_n": [
+          4001,
+          8001
+        ],
+        "pde_grid": [
+          3200,
+          3200
+        ]
+      },
+      "_mode": "fast",
+      "_file": "configs/pricing.yaml"
+    },
+    "numerical": {
+      "case": {
+        "S": 100,
+        "K": 100,
+        "T": 1.0,
+        "r": 0.05,
+        "q": 0.0,
+        "sigma": 0.2
+      },
+      "off_atm_case": {
+        "S": 100,
+        "K": 105,
+        "T": 1.0,
+        "r": 0.05,
+        "q": 0.02,
+        "sigma": 0.25
+      },
+      "rannacher_steps": 2,
+      "n_sd": 6.0,
+      "psor": {
+        "omega": 1.2,
+        "tol": 1e-10,
+        "max_iter": 10000
+      },
+      "instability_demo": {
+        "n_space": 100,
+        "n_time_stable": 200,
+        "n_time_unstable": 60,
+        "T": 1.0
+      },
+      "domain_n_sd": [
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        4.0,
+        6.0,
+        8.0
+      ],
+      "tree_steps": [
+        25,
+        50,
+        75,
+        100,
+        151,
+        201,
+        301,
+        401,
+        601,
+        801,
+        1001
+      ],
+      "pde_space": [
+        50,
+        100,
+        200,
+        400,
+        800
+      ],
+      "pde_time_fixed_space": 1600,
+      "pde_time": [
+        10,
+        20,
+        40,
+        80,
+        160
+      ],
+      "greek_bumps": [
+        0.1,
+        0.01,
+        0.001,
+        0.0001,
+        1e-05,
+        1e-06,
+        1e-07
+      ],
+      "iv_grid": {
+        "sigmas": [
+          0.05,
+          0.1,
+          0.2,
+          0.4,
+          0.8,
+          1.5
+        ],
+        "moneyness": [
+          0.5,
+          0.7,
+          0.85,
+          1.0,
+          1.2,
+          1.5,
+          2.0
+        ],
+        "maturities": [
+          0.1,
+          1.0
+        ]
+      },
+      "_mode": "fast",
+      "_file": "configs/numerical.yaml"
+    },
+    "market_data": {
+      "synthetic": {
+        "S": 100.0,
+        "r": 0.03,
+        "q": 0.015,
+        "expiry_days": [
+          30,
+          60,
+          91,
+          182,
+          365,
+          730
+        ],
+        "ssvi": {
+          "rho": -0.6,
+          "eta": 1.1,
+          "gamma": 0.5,
+          "atm_vols": [
+            0.22,
+            0.21,
+            0.2,
+            0.195,
+            0.19,
+            0.185
+          ]
+        },
+        "seed": 7,
+        "valuation_time": "2026-01-15T15:30:00"
+      },
+      "cleaning": {
+        "max_rel_spread": 0.5,
+        "min_abs_spread": 0.05,
+        "min_days": 7,
+        "stale_seconds": 900,
+        "zero_bid": "reject"
+      },
+      "forward_pairs": 25,
+      "optional_download": {
+        "ticker": "SPY",
+        "max_expiries": 6,
+        "exercise_style": "american",
+        "rate_assumption_for_descriptive_iv": 0.04
+      },
+      "_mode": "fast",
+      "_file": "configs/market_data.yaml"
+    },
+    "hedging": {
+      "S0": 100.0,
+      "K": 100.0,
+      "T": 1.0,
+      "r": 0.03,
+      "q": 0.0,
+      "sigma_implied": 0.2,
+      "sigma_realised": 0.2,
+      "mu": 0.07,
+      "cost_rate": 0.0,
+      "frequencies": [
+        4,
+        21,
+        252,
+        1000
+      ],
+      "mismatch_realised_vols": [
+        0.1,
+        0.14,
+        0.17,
+        0.2,
+        0.23,
+        0.26,
+        0.3
+      ],
+      "mismatch_frequency": 252,
+      "cost_rates": [
+        0.0,
+        0.0005,
+        0.001,
+        0.002
+      ],
+      "cost_frequencies": [
+        4,
+        12,
+        21,
+        52,
+        126,
+        252,
+        504,
+        1000
+      ],
+      "dividend_case_q": 0.02,
+      "seed": 42,
+      "n_paths": 10000,
+      "n_paths_mismatch": 5000,
+      "n_paths_cost": 5000,
+      "_mode": "fast",
+      "_file": "configs/hedging.yaml"
+    }
+  },
+  "data_provenance": {
+    "pricing/convergence/greeks/iv": "model parameters only; no market data",
+    "surface": "SYNTHETIC European chain from optpricer.market.synthetic_european_chain (seeded, SSVI truth); saved to data/synthetic/synthetic_european_chain.csv",
+    "hedging": "simulated GBM paths under P with seeds from configs/hedging.yaml",
+    "market_snapshot": "delayed yfinance snapshot in data/snapshots (AMERICAN; descriptive IV only)"
+  },
+  "cpu_count": 16,
+  "mode": "fast",
+  "stage_runtimes_s": {
+    "pricing": 3.21,
+    "american": 17.5,
+    "convergence": 2.22,
+    "greeks": 1.03,
+    "iv": 0.72,
+    "surface": 5.79,
+    "hedging": 35.14
+  },
+  "seeds": {
+    "pricing": 20261124,
+    "synthetic_chain": 7,
+    "hedging": 42
+  }
+}

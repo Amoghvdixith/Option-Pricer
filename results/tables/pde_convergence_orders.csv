@@ -1,0 +1,6 @@
+study,scheme,smooth_payoff,observed_order_fit
+space,cn,False,2.0034731526818916
+space,cn,True,1.9948201431138222
+time,cn,True,2.15738999793159
+time,cn + Rannacher,True,2.022571652139471
+time,implicit,True,1.0911352692892857

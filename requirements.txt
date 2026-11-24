@@ -1,0 +1,22 @@
+# Core runtime
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+matplotlib>=3.8
+pyyaml>=6.0
+# Tests and quality
+pytest>=7.4
+pytest-cov>=4.1
+ruff>=0.4
+mypy>=1.8
+# Local app (optional)
+streamlit>=1.46
+plotly>=5.18
+# Notebooks (optional)
+nbformat>=5.9
+nbclient>=0.9
+ipykernel>=6.25
+# Optional public option-chain provider (delayed data; network access required)
+yfinance>=0.2.40
+# Install the package itself (editable) from the project root:
+-e .

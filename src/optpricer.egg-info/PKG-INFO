@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: optpricer
+Version: 0.1.0
+Summary: Educational options pricing and research library: BSM, Greeks, CRR/LR trees, finite differences with PSOR, Monte Carlo, implied volatility, surface diagnostics and delta-hedging simulation.
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.26
+Requires-Dist: scipy>=1.11
+Requires-Dist: pandas>=2.1
+Requires-Dist: matplotlib>=3.8
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: pytest-cov>=4.1; extra == "dev"
+Requires-Dist: ruff>=0.4; extra == "dev"
+Requires-Dist: mypy>=1.8; extra == "dev"
+Provides-Extra: app
+Requires-Dist: streamlit>=1.32; extra == "app"
+Requires-Dist: plotly>=5.18; extra == "app"
+Provides-Extra: market
+Requires-Dist: yfinance>=0.2.40; extra == "market"
+Provides-Extra: notebooks
+Requires-Dist: nbformat>=5.9; extra == "notebooks"
+Requires-Dist: nbclient>=0.9; extra == "notebooks"
+Requires-Dist: ipykernel>=6.25; extra == "notebooks"

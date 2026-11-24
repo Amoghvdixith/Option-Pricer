@@ -1,0 +1,22 @@
+{
+  "source": "yfinance public option chain for SPY",
+  "retrieved_utc": "2026-11-24T11:51:12.424683+00:00",
+  "underlying_spot": 722.3900146484375,
+  "underlying_spot_time_utc": "2026-11-23T20:59:00+00:00",
+  "expiries": [
+    "2026-12-01",
+    "2026-12-02",
+    "2026-12-03",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+  ],
+  "currency": "USD",
+  "exercise_style": "american",
+  "settlement": "physical delivery of shares (US equity/ETF options)",
+  "expiry_time_assumption": "20:00 UTC on expiry date (approx. 16:00 New York; ignores DST)",
+  "quote_timestamp_note": "yfinance gives lastTradeDate per contract, not a quote timestamp; bid/ask and spot are delayed and not synchronised. 'quote_time' is left empty; staleness can only be judged from last_trade_time.",
+  "label": "MARKET_DELAYED - not live, not synchronised",
+  "rate_assumption": "none stored; supply r explicitly downstream",
+  "rate_assumption_for_descriptive_iv": 0.04
+}

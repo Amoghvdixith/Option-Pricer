@@ -1,0 +1,26 @@
+# Method-agreement experiment (scripts/run_method_comparison.py, scripts/run_american_examples.py).
+# Conventions: T in ACT/365F years; r, q continuously compounded; sigma annualised.
+common:
+  spot: 100.0
+  strikes: [80, 90, 100, 110, 120]
+  maturities: [0.0833333333, 0.25, 1.0, 2.0]   # ~1 month .. 2 years
+  scenarios:                                   # (r, q, sigma)
+    - {name: base,        r: 0.05, q: 0.00, sigma: 0.20}
+    - {name: dividend,    r: 0.05, q: 0.03, sigma: 0.20}
+    - {name: high_vol,    r: 0.03, q: 0.01, sigma: 0.40}
+  seed: 20261124
+  headline: {S: 100, K: 100, T: 1.0, r: 0.05, q: 0.0, sigma: 0.20}
+fast:
+  crr_n: 1000
+  lr_n: 201
+  pde_n_space: 400
+  pde_n_time: 400
+  mc_paths: 200000
+  american_reference: {lr_n: [4001, 8001], pde_grid: [3200, 3200]}
+research:
+  crr_n: 1000
+  lr_n: 201
+  pde_n_space: 400
+  pde_n_time: 400
+  mc_paths: 1000000
+  american_reference: {lr_n: [8001, 16001], pde_grid: [6400, 6400]}
